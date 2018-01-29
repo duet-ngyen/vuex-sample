@@ -8,6 +8,7 @@ const mutations = {
       state.newTodo = todo
     },
     ADD_TODO (state) {
+      console.log(state);
       state.todos.push({
         body: state.newTodo,
         completed: false

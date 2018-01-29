@@ -3,27 +3,19 @@
     <h1>Hello from List Entity</h1>
     <ul>
       <li v-for="entity in entities">
-        {{entity['name']}}
+        {{entity['id']}} - {{entity['name']}}
       </li>
     </ul>
   </div>
 </template>
 
 <script type="text/javascript">
+  import { mapState } from 'vuex'
   export default {
-    data() {
-      return {
-        entities: this.$store.getters.entities
-      };
-    },
-    created(){
-      this.$store.getters.entities = this.$http.get('/entities')
-        .then(request => this.buildEntityList(request.data))
-        .catch(() => { alert('Something went wrong!') })
-    },
-    methods: {
-      buildEntityList (data) {
-        this.entities = data
+    name: 'ListEntity',
+    computed: {
+      entities () {
+        return this.$store.state.entities.list
       }
     }
   }
