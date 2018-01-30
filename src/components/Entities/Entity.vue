@@ -1,6 +1,7 @@
 <template>
   <div id="entity-detail">
     {{ entity }}
+    {{this.$route.params}}
   </div>
 </template>
 

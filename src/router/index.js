@@ -22,6 +22,11 @@ export default new Router({
       path: '/entities/:id',
       name: 'Entity',
       component: Entity
+    },
+    {
+      path: '/projects/:project_id/tasks/:task_id',
+      name: 'Entity',
+      component: Entity
     }
   ]
 })

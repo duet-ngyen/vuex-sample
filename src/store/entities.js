@@ -42,6 +42,9 @@ const actions = {
   },
   getEntities ({commit}) {
     commit('GET_LIST_ENTITY')
+  },
+  SEARCH_ENTITY: function({ commit }, entity) {
+    commit('SET_PROJECT_LIST', { list: state.list.filter(e => e.name.includes(entity)) });
   }
 }
 
