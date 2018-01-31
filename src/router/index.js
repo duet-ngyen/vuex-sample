@@ -9,6 +9,18 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
+      path: '/admin',
+      name: 'admin',
+      component:  { template: '<router-view/>' },
+      children: [
+        {
+          path: 'entities',
+          name: 'HomeEntity',
+          component: HomeEntity
+        }
+      ]
+    },
+    {
       path: '/todoapp',
       name: 'TodoHome',
       component: TodoHome
